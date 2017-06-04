@@ -51,7 +51,7 @@
         this.bonusText='';
         
         this.lives=3;
-	    this.livesText='';
+	this.livesText='';
        
 
     };
@@ -251,6 +251,7 @@
             
             var audio = new Audio('assets/dotsound.mp3');
             audio.play()
+		
             if (this.dots.total === 0)
             {
                 this.dots.callAll('revive');
@@ -262,9 +263,10 @@
             coco.kill();
             this.bonus+=10;
             this.bonusText.text= 'Bonus: ' + this.bonus;
-	        this.score+=10;
-	        this.scoreText.text= 'Score: ' + this.score;
-	        var audio = new Audio('assets/cocosound.mp3');
+	    this.score+=10;
+	    this.scoreText.text= 'Score: ' + this.score;
+	    
+	    var audio = new Audio('assets/cocosound.mp3');
             audio.play()
         },
 
