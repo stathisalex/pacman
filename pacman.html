@@ -125,7 +125,7 @@
             this.move(Phaser.LEFT);
             
             this.scoreText = game.add.text(0, 500, 'Score: 0', { fontSize: '10px Tahoma', fill: 'white' });
-            this.bonusText = game.add.text(150, 500, 'Bonus: 0', { fontSize: '10px Tahoma', fill: 'white' });
+            this.bonusText = game.add.text(180, 500, 'Bonus: 0', { fontSize: '10px Tahoma', fill: 'white' });
             this.livesText = game.add.text(300, 500, 'Lives: 3', { fontSize: '10px Tahoma', fill: 'white' });
         },
 
@@ -252,7 +252,7 @@
             var audio = new Audio('assets/dotsound.mp3');
             audio.play()
 		
-            if (this.dots.total === 0)
+            if (this.dots.total === 0 && this.cocos.total === 0)
             {
                 this.dots.callAll('revive');
             }
@@ -268,6 +268,11 @@
 	    
 	    var audio = new Audio('assets/cocosound.mp3');
             audio.play()
+		
+	    if (this.cocos.total === 0 && this.dots.total === 0)
+            {
+                this.dots.callAll('revive');
+            }
         },
 
         update: function () {
